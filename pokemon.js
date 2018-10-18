@@ -1,24 +1,16 @@
 /* global angular */
 angular.module('app', [])
     .controller('mainCtrl', mainCtrl)
-    .directive('myCustomer', function() {
-        return {
-            restrict: 'E',
-            scope: {
-                customerInfo: '=info'
-            },
-            templateUrl: 'my-customer-iso.html'
-        };
-    });
+    .directive('pokeBox', pokeBoxDirective);
 // .directive('myCustomer', myCustomerDirective);
 
 function mainCtrl($scope) {
     $scope.test = "Charzard";
     $scope.monsters = [
-        { name: "Pikachu", address: "https://img.pokemondb.net/sprites/platinum/normal/pikachu.png" },
+        { name: "Pikachu", sprite: "https://img.pokemondb.net/sprites/platinum/normal/pikachu.png" },
     ];
-    $scope.naomi = { name: 'Naomi', address: '1600 Amphitheatre' };
-    $scope.igor = { name: 'Igor', address: '123 Somewhere' };
+    $scope.naomi = { name: 'Naomi', sprite: '1600 Amphitheatre' };
+    $scope.igor = { name: 'Igor', sprite: '123 Somewhere' };
     // $scope.addNew = function(user) {
     //     if (!user.name && !user.email) {
     //         alert("Please enter either an email or a name");
@@ -38,6 +30,15 @@ function mainCtrl($scope) {
     // };
 }
 
+function pokeBoxDirective() {
+    return {
+        restrict: 'E',
+        scope: {
+            pokemon: '='
+        },
+        templateUrl: 'poke-box.html'
+    };
+}
 
 // function pokeBoxDirective() {
 //     return {

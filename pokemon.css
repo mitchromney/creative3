@@ -1,0 +1,84 @@
+.border {
+    border: solid gray 1px;
+}
+
+.border-shadow {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    transition: all 200ms ease-out;
+}
+
+.border-shadow:hover {
+    box-shadow: 0 0 6px rgba(35, 173, 287, 1);
+}
+
+.border-shadow > .symbol {
+    text-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+    transition: all 200ms ease-out;
+}
+
+.border-shadow:hover > .symbol {
+    text-shadow: 0 0 10px rgba(35, 173, 287, 1);
+}
+
+.centered {
+    margin: auto;
+}
+
+
+.main-content {
+    width: 50vw;
+    margin: auto;
+}
+
+.rounder {
+    border-radius: 1.5vw;
+}
+
+.smaller-square {
+    width: 100%;
+    padding-top: 100%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.sprite {
+    width: 11vw;
+}
+
+.square {
+    width: 100%;
+    padding-top: 33.33%;
+    position: relative;
+    /* If you want text inside of it */
+}
+
+.square-content {
+    width: 15vw;
+    height: 15vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+
+}
+
+.symbol {
+    color: lightgray;
+    font-size: 8vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+}
+
+.title-bar {
+    text-align: center;
+    color: white;
+    background-color: #dc3545;
+    margin-top: 0px;
+    padding: 5px;
+    font-weight: bold;
+}

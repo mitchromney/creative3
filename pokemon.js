@@ -24,7 +24,11 @@ function mainCtrl($scope, $http) {
             console.log(response);
             $scope.pokedata = response.data;
         });
-    }
+    };
+    
+    $scope.addToTeam = function() {
+        alert("testy test");  
+    };
 }
 
 function pokeBoxDirective() {

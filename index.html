@@ -51,21 +51,21 @@
 
         <div class="main-content">
             <div class="row">
-                <div class="col-md-4 square" data-toggle="modal" data-target="#exampleModal">
+                <div class="col-md-4 square" data-toggle="modal" data-target="#modal-0">
                     <div class="square-content border rounder border-shadow">
                         <span class="fas fa-plus symbol"></span>
                     </div>
                 </div>
-                <div class="col-md-4 square" data-toggle="modal" data-target="#exampleModal">
-                    <poke-box pokemon="monsters[0]"></poke-box>
+                <div class="col-md-4 square" data-toggle="modal" data-target="#modal-1">
+                    <poke-box pokemon="monsters[1]"></poke-box>
                 </div>
-                <div class="col-md-4 square" data-toggle="modal" data-target="#exampleModal">
-                    <poke-box pokemon="monsters[0]"></poke-box>
+                <div class="col-md-4 square" data-toggle="modal" data-target="#modal-2">
+                    <poke-box pokemon="monsters[2]"></poke-box>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 square" data-toggle="modal" data-target="#exampleModal">
-                    <poke-box pokemon="monsters[0]"></poke-box>
+                <div class="col-md-4 square" data-toggle="modal" data-target="#modal-3">
+                    <poke-box pokemon="monsters[3]"></poke-box>
                 </div>
                 <div class="col-md-4 square" data-toggle="modal" data-target="#exampleModal">
                     <poke-box pokemon="monsters[0]"></poke-box>
@@ -76,38 +76,10 @@
             </div>
         </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Select a Pokemon</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body">
-                        
-                        <div id="pokemon">
-                            <div ng-app='app' ng-controller='mainCtrl'>
-                                <div class="searchField">
-                                    <form ng-model="form" ng-submit="onsubmit(form)">
-                                        <input type="text" placeholder="Search" size="40" ng-model="pokemonName">
-                                        <input type="submit" class="searchButton" style="background-color:lightgrey;" ng-click="">
-                                    </form>
-                                </div>
-                                <img src="{{pokedata['sprites']['front_default']}}">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="closeButton" data-dismiss="modal">Close</button>
-                        <button type="button" class="addButton" style="background-color:forestgreen">Add to Team</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <poke-modal index='0'></poke-modal>
+        <poke-modal index='1'></poke-modal>
+        <poke-modal index='2'></poke-modal>
+        <poke-modal index='3'></poke-modal>
 
 
 </body>

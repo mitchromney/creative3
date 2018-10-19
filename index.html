@@ -36,52 +36,120 @@
         <h1 class="title-bar">
             Pokemon Team Creator
         </h1>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <div class="btn-group btn-group-danger" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-danger">Gen I</button>
-                    <button type="button" class="btn btn-danger">Gen II</button>
-                    <button type="button" class="btn btn-danger">Gen III</button>
-                    <button type="button" class="btn btn-danger">Gen IV</button>
-                    <button type="button" class="btn btn-danger">Gen V</button>
-                    <button type="button" class="btn btn-danger">Gen VI</button>
-                </div>
-            </div>
-        </div>
-
         <div class="main-content">
             <div class="row">
-                <div class="col-md-4 square" data-toggle="modal" data-target="#modal-0">
-                    <div class="square-content border rounder border-shadow">
-                        <span class="fas fa-plus symbol"></span>
+
+                <div class="col-md-4 square" ng-click="setIndex(0)" data-toggle="modal" data-target="#modal-0">
+                    <div class="square-content border rounder border-shadow" ng-switch="empty[0]">
+                        <div class="symbol" ng-switch-when="yes">
+                            <span class="fas fa-plus symbol"></span>
+                        </div>
+                        <div ng-switch-when="no">
+                            <img class="sprite" src={{monsters[0].sprite}} alt="picture of {{monsters[0].name}}">
+                            <p>{{monsters[0].name}}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 square" data-toggle="modal" data-target="#modal-1">
-                    <poke-box pokemon="monsters[1]"></poke-box>
+
+                <div class="col-md-4 square" ng-click="setIndex(1)" data-toggle="modal" data-target="#modal-0">
+                    <div class="square-content border rounder border-shadow" ng-switch="empty[1]">
+                        <div class="symbol" ng-switch-when="yes">
+                            <span class="fas fa-plus symbol"></span>
+                        </div>
+                        <div ng-switch-when="no">
+                            <img class="sprite" src={{monsters[1].sprite}} alt="picture of {{monsters[1].name}}">
+                            <p>{{monsters[1].name}}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 square" data-toggle="modal" data-target="#modal-2">
-                    <poke-box pokemon="monsters[2]"></poke-box>
+
+                <div class="col-md-4 square" ng-click="setIndex(2)" data-toggle="modal" data-target="#modal-0">
+                    <div class="square-content border rounder border-shadow" ng-switch="empty[2]">
+                        <div class="symbol" ng-switch-when="yes">
+                            <span class="fas fa-plus symbol"></span>
+                        </div>
+                        <div ng-switch-when="no">
+                            <img class="sprite" src={{monsters[2].sprite}} alt="picture of {{monsters[2].name}}">
+                            <p>{{monsters[2].name}}</p>
+                        </div>
+                    </div>
                 </div>
+
             </div>
             <div class="row">
-                <div class="col-md-4 square" data-toggle="modal" data-target="#modal-3">
-                    <poke-box pokemon="monsters[3]"></poke-box>
+
+                <div class="col-md-4 square" ng-click="setIndex(3)" data-toggle="modal" data-target="#modal-0">
+                    <div class="square-content border rounder border-shadow" ng-switch="empty[3]">
+                        <div class="symbol" ng-switch-when="yes">
+                            <span class="fas fa-plus symbol"></span>
+                        </div>
+                        <div ng-switch-when="no">
+                            <img class="sprite" src={{monsters[3].sprite}} alt="picture of {{monsters[3].name}}">
+                            <p>{{monsters[3].name}}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 square" data-toggle="modal" data-target="#exampleModal">
-                    <poke-box pokemon="monsters[0]"></poke-box>
+
+                <div class="col-md-4 square" ng-click="setIndex(4)" data-toggle="modal" data-target="#modal-0">
+                    <div class="square-content border rounder border-shadow" ng-switch="empty[4]">
+                        <div class="symbol" ng-switch-when="yes">
+                            <span class="fas fa-plus symbol"></span>
+                        </div>
+                        <div ng-switch-when="no">
+                            <img class="sprite" src={{monsters[4].sprite}} alt="picture of {{monsters[4].name}}">
+                            <p>{{monsters[4].name}}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 square" data-toggle="modal" data-target="#exampleModal">
-                    <poke-box pokemon="monsters[0]"></poke-box>
+
+                <div class="col-md-4 square" ng-click="setIndex(5)" data-toggle="modal" data-target="#modal-0">
+                    <div class="square-content border rounder border-shadow" ng-switch="empty[5]">
+                        <div class="symbol" ng-switch-when="yes">
+                            <span class="fas fa-plus symbol"></span>
+                        </div>
+                        <div ng-switch-when="no">
+                            <img class="sprite" src={{monsters[5].sprite}} alt="picture of {{monsters[5].name}}">
+                            <p>{{monsters[5].name}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-0" tabindex="-1" role="dialog" aria-labelledby="modal-0-label" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Select a Pokemon</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div id="pokemon">
+                            <div class="searchField">
+                                <form ng-model="form" ng-submit="onsubmit(form)">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Search" size="40" ng-model="pokemonName">
+                                    </div>
+                                    <input type="submit" class="btn btn-primary" ng-click="">
+                                </form>
+                            </div>
+                            <img src="{{pokedata['sprites']['front_default']}}" class="centered">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" ng-click="clear()" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success" ng-click="addToTeam()" data-dismiss="modal">Add to Team</button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <poke-modal index='0'></poke-modal>
-        <poke-modal index='1'></poke-modal>
-        <poke-modal index='2'></poke-modal>
-        <poke-modal index='3'></poke-modal>
-
-
+    </div>
 </body>
 
 </html>
